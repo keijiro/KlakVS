@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: Sphere
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":246.6679,"y":163.504},"zoom":0.9,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":107.0,"y":26.0},"guid":"795d39f2-9471-47ac-a8db-6ade9f534f6a","$version":"A","$type":"Bolt.Update","$id":"9"},{"chainable":false,"member":{"name":"localPosition","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null,"input":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":278.0,"y":65.0},"guid":"be00ac20-dd83-464e-9a98-8342f23538f5","$version":"A","$type":"Bolt.SetMember","$id":"11"},{"member":{"name":"time","parameterTypes":null,"targetType":"UnityEngine.Time","targetTypeName":"UnityEngine.Time","$version":"A"},"defaultValues":{},"position":{"x":-152.0,"y":124.0},"guid":"9915167c-9280-46e1-8a14-396f738bdc84","$version":"A","$type":"Bolt.GetMember","$id":"14"},{"defaultValues":{"Seed":{"$content":0,"$type":"System.UInt32"},"Data":{"$content":0,"$type":"System.UInt32"},"Min":{"x":-1.0,"y":0.0,"z":-1.0,"$type":"UnityEngine.Vector3"},"Max":{"x":1.0,"y":1.0,"z":1.0,"$type":"UnityEngine.Vector3"}},"position":{"x":36.0,"y":149.0},"guid":"1caaffa1-53c8-436b-83f1-557622a843ce","$version":"A","$type":"Bolt.Addons.Klak.Math.XXHashVector3","$id":"17"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"11"},"destinationKey":"assign","guid":"db2b2d25-c4c8-4720-ae78-f05356ee9b68","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"value","destinationUnit":{"$ref":"17"},"destinationKey":"Seed","guid":"8ffa3926-c7c6-48a1-91b5-6d5f1e830c6c","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"17"},"sourceKey":"Hash","destinationUnit":{"$ref":"11"},"destinationKey":"input","guid":"f861cb82-8253-4a5f-9b22-ac4f29f6ca29","$type":"Bolt.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
