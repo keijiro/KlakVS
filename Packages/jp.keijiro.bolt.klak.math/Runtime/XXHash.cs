@@ -33,6 +33,18 @@ static class XXHash
 
     public static float Float(uint seed, uint data, float min, float max)
       => Calculate(seed, data) / (float)uint.MaxValue * (max - min) + min;
+
+    public static Vector3 Direction(uint seed, uint data)
+    {
+        // http://corysimon.github.io/articles/uniformdistn-on-sphere/
+        var theta = XXHash.Float(seed, data, 0, Mathf.PI * 2);
+        var phi = Mathf.Acos(XXHash.Float(seed, data + 0x10000000, -1, 1));
+        var sin_phi = Mathf.Sin(phi);
+        var x = sin_phi * Mathf.Cos(theta);
+        var y = sin_phi * Mathf.Sin(theta);
+        var z = Mathf.Cos(phi);
+        return new Vector3(x, y, z);
+    }
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (int)")]
@@ -44,7 +56,9 @@ public sealed class XXHashInt : Unit
     [DoNotSerialize] public ValueInput Data { get; private set; }
     [DoNotSerialize] public ValueInput Min { get; private set; }
     [DoNotSerialize] public ValueInput Max { get; private set; }
-    [DoNotSerialize] public ValueOutput Hash { get; private set; }
+
+    [DoNotSerialize, PortLabelHidden]
+    public ValueOutput Output { get; private set; }
 
     #endregion
 
@@ -56,10 +70,10 @@ public sealed class XXHashInt : Unit
         Data = ValueInput<uint>(nameof(Data), 0);
         Min = ValueInput<int>(nameof(Min), 0);
         Max = ValueInput<int>(nameof(Max), 10);
-        Hash = ValueOutput<int>(nameof(Hash), GetHash);
+        Output = ValueOutput<int>(nameof(Output), GetOutput);
     }
 
-    int GetHash(Flow flow)
+    int GetOutput(Flow flow)
       => XXHash.Int(flow.GetValue<uint>(Seed), flow.GetValue<uint>(Data),
                     flow.GetValue<int>(Min), flow.GetValue<int>(Max));
 
@@ -75,7 +89,9 @@ public sealed class XXHashFloat : Unit
     [DoNotSerialize] public ValueInput Data { get; private set; }
     [DoNotSerialize] public ValueInput Min { get; private set; }
     [DoNotSerialize] public ValueInput Max { get; private set; }
-    [DoNotSerialize] public ValueOutput Hash { get; private set; }
+
+    [DoNotSerialize, PortLabelHidden]
+    public ValueOutput Output { get; private set; }
 
     #endregion
 
@@ -87,10 +103,10 @@ public sealed class XXHashFloat : Unit
         Data = ValueInput<uint>(nameof(Data), 0);
         Min = ValueInput<float>(nameof(Min), 0);
         Max = ValueInput<float>(nameof(Max), 1);
-        Hash = ValueOutput<float>(nameof(Hash), GetHash);
+        Output = ValueOutput<float>(nameof(Output), GetOutput);
     }
 
-    float GetHash(Flow flow)
+    float GetOutput(Flow flow)
       => XXHash.Float(flow.GetValue<uint>(Seed), flow.GetValue<uint>(Data),
                       flow.GetValue<float>(Min), flow.GetValue<float>(Max));
 
@@ -106,7 +122,9 @@ public sealed class XXHashVector3 : Unit
     [DoNotSerialize] public ValueInput Data { get; private set; }
     [DoNotSerialize] public ValueInput Min { get; private set; }
     [DoNotSerialize] public ValueInput Max { get; private set; }
-    [DoNotSerialize] public ValueOutput Hash { get; private set; }
+
+    [DoNotSerialize, PortLabelHidden]
+    public ValueOutput Output { get; private set; }
 
     #endregion
 
@@ -118,10 +136,10 @@ public sealed class XXHashVector3 : Unit
         Data = ValueInput<uint>(nameof(Data), 0);
         Min = ValueInput<Vector3>(nameof(Min), Vector3.zero);
         Max = ValueInput<Vector3>(nameof(Max), Vector3.one);
-        Hash = ValueOutput<Vector3>(nameof(Hash), GetHash);
+        Output = ValueOutput<Vector3>(nameof(Output), GetOutput);
     }
 
-    Vector3 GetHash(Flow flow)
+    Vector3 GetOutput(Flow flow)
     {
         var seed = flow.GetValue<uint>(Seed);
         var data = flow.GetValue<uint>(Data);
@@ -132,6 +150,66 @@ public sealed class XXHashVector3 : Unit
         var z = XXHash.Float(seed, data + 0x20000000, min.z, max.z);
         return new Vector3(x, y, z);
     }
+
+    #endregion
+}
+
+[UnitCategory("Klak/Math"), UnitTitle("XXHash (Direction)")]
+public sealed class XXHashDirection : Unit
+{
+    #region Unit I/O
+
+    [DoNotSerialize] public ValueInput Seed { get; private set; }
+    [DoNotSerialize] public ValueInput Data { get; private set; }
+
+    [DoNotSerialize, PortLabelHidden]
+    public ValueOutput Output { get; private set; }
+
+    #endregion
+
+    #region Unit implementation
+
+    protected override void Definition()
+    {
+        Seed = ValueInput<uint>(nameof(Seed), 0);
+        Data = ValueInput<uint>(nameof(Data), 0);
+        Output = ValueOutput<Vector3>(nameof(Output), GetOutput);
+    }
+
+    Vector3 GetOutput(Flow flow)
+      => XXHash.Direction(flow.GetValue<uint>(Seed),
+                          flow.GetValue<uint>(Data));
+
+    #endregion
+}
+
+[UnitCategory("Klak/Math"), UnitTitle("XXHash (Rotation)")]
+public sealed class XXHashRotation : Unit
+{
+    #region Unit I/O
+
+    [DoNotSerialize] public ValueInput Seed { get; private set; }
+    [DoNotSerialize] public ValueInput Data { get; private set; }
+
+    [DoNotSerialize, PortLabelHidden]
+    public ValueOutput Output { get; private set; }
+
+    #endregion
+
+    #region Unit implementation
+
+    protected override void Definition()
+    {
+        Seed = ValueInput<uint>(nameof(Seed), 0);
+        Data = ValueInput<uint>(nameof(Data), 0);
+        Output = ValueOutput<Quaternion>(nameof(Output), GetOutput);
+    }
+
+    Quaternion GetOutput(Flow flow)
+      => Quaternion.FromToRotation
+           (Vector3.forward,
+            XXHash.Direction(flow.GetValue<uint>(Seed),
+                             flow.GetValue<uint>(Data)));
 
     #endregion
 }

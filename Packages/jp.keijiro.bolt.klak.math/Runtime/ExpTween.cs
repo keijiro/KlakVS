@@ -11,7 +11,9 @@ public sealed class ExpTweenFloat : Unit
     [DoNotSerialize] public ValueInput Current { get; private set; }
     [DoNotSerialize] public ValueInput Target { get; private set; }
     [DoNotSerialize] public ValueInput Speed { get; private set; }
-    [DoNotSerialize] public ValueOutput Output { get; private set; }
+
+    [DoNotSerialize, PortLabelHidden]
+    public ValueOutput Output { get; private set; }
 
     #endregion
 
@@ -41,7 +43,9 @@ public sealed class ExpTweenVector3 : Unit
     [DoNotSerialize] public ValueInput Current { get; private set; }
     [DoNotSerialize] public ValueInput Target { get; private set; }
     [DoNotSerialize] public ValueInput Speed { get; private set; }
-    [DoNotSerialize] public ValueOutput Output { get; private set; }
+
+    [DoNotSerialize, PortLabelHidden]
+    public ValueOutput Output { get; private set; }
 
     #endregion
 
