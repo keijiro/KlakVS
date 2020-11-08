@@ -67,5 +67,36 @@ public sealed class ExpTweenVector3 : Unit
     #endregion
 }
 
+[UnitCategory("Klak/Tween"), UnitTitle("ExpTween (Quaternion)")]
+public sealed class ExpTweenQuaternion : Unit
+{
+    #region Unit I/O
+
+    [DoNotSerialize] public ValueInput Current { get; private set; }
+    [DoNotSerialize] public ValueInput Target { get; private set; }
+    [DoNotSerialize] public ValueInput Speed { get; private set; }
+
+    [DoNotSerialize, PortLabelHidden]
+    public ValueOutput Output { get; private set; }
+
+    #endregion
+
+    #region Unit implementation
+
+    protected override void Definition()
+    {
+        Current = ValueInput<Quaternion>(nameof(Current), Quaternion.identity);
+        Target = ValueInput<Quaternion>(nameof(Target), Quaternion.identity);
+        Speed = ValueInput<float>(nameof(Speed), 5);
+        Output = ValueOutput<Quaternion>(nameof(Output), Process);
+    }
+
+    Quaternion Process(Flow flow)
+      => Quaternion.Lerp(flow.GetValue<Quaternion>(Target),
+                         flow.GetValue<Quaternion>(Current),
+                         Mathf.Exp(-flow.GetValue<float>(Speed) * Time.deltaTime));
+
+    #endregion
+}
 
 } // namespace Bolt.Addons.Klak.Math
