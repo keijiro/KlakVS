@@ -1,7 +1,7 @@
 {
   "author": "Keijiro Takahashi",
   "dependencies": { "com.unity.mathematics": "1.2.1" },
-  "description": "Math extension for Bolt",
+  "description": "Misc math extensions for Bolt",
   "displayName": "BoltKlak",
   "keywords": [ "unity" ],
   "license": "Unlicense",
@@ -9,5 +9,5 @@
   "repository": "github:keijiro/BoltKlak",
   "unity": "2019.3",
   "unityRelease": "0f1",
-  "version": "0.0.1"
+  "version": "1.0.0"
 }
