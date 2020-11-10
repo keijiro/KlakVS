@@ -11,6 +11,8 @@ static class XXHash
     const uint PRIME32_4 = 668265263U;
     const uint PRIME32_5 = 374761393U;
 
+    const float TAU = 6.28318530718f;
+
     static uint rotl32(uint x, int r)
       => (x << r) | (x >> 32 - r);
 
@@ -37,13 +39,23 @@ static class XXHash
     public static Vector3 Direction(uint seed, uint data)
     {
         // http://corysimon.github.io/articles/uniformdistn-on-sphere/
-        var theta = XXHash.Float(seed, data, 0, Mathf.PI * 2);
+        var theta = XXHash.Float(seed, data, 0, TAU);
         var phi = Mathf.Acos(XXHash.Float(seed, data + 0x10000000, -1, 1));
         var sin_phi = Mathf.Sin(phi);
         var x = sin_phi * Mathf.Cos(theta);
         var y = sin_phi * Mathf.Sin(theta);
         var z = Mathf.Cos(phi);
         return new Vector3(x, y, z);
+    }
+
+    public static Quaternion Rotation(uint seed, uint data)
+    {
+        // James Arvo's classic approach
+        var v = Direction(seed, data);
+        var phi = XXHash.Float(seed, data + 0x20000000, 0, TAU);
+        var q1 = Quaternion.AngleAxis(phi, Vector3.forward);
+        var q2 = Quaternion.FromToRotation(Vector3.forward, v);
+        return q1 * q2;
     }
 }
 
@@ -211,10 +223,8 @@ public sealed class XXHashRotation : Unit
     }
 
     Quaternion GetOutput(Flow flow)
-      => Quaternion.FromToRotation
-           (Vector3.forward,
-            XXHash.Direction(flow.GetValue<uint>(Seed),
-                             flow.GetValue<uint>(Data)));
+      => XXHash.Rotation(flow.GetValue<uint>(Seed),
+                         flow.GetValue<uint>(Data));
 
     #endregion
 }
