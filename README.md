@@ -13,6 +13,8 @@ At the moment, it provides the following units:
 XXHash
 ------
 
+![gif](https://i.imgur.com/evtniEQ.gif)
+
 ![XXHash](https://i.imgur.com/B1RNUow.png)
 
 **[XXHash]** is a lightweight non-cryptographic hash function with which you
@@ -34,6 +36,8 @@ There are variants for different output types:
 ExpTween
 --------
 
+![gif](https://i.imgur.com/mY2y641.gif)
+
 ![ExpTween](https://i.imgur.com/CGquPm7.png)
 
 The **ExpTween** unit implements an exponential interpolation function that is
@@ -49,6 +53,8 @@ There are variants for different types: **ExpTweenFloat**,
 CdsTween
 --------
 
+![gif](https://i.imgur.com/tFgUGrs.gif)
+
 ![CdsTween](https://i.imgur.com/JEvzQHC.png)
 
 The **CdsTween** unit implements a [critically damped spring smoothing function]
@@ -62,6 +68,8 @@ There are variants for different types: **CdsTweenFloat**,
 
 NoiseSource
 -----------
+
+![gif](https://i.imgur.com/ogxO8vQ.gif)
 
 ![NoiseSource](https://i.imgur.com/tp6i0hS.png)
 
