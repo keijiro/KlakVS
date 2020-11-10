@@ -103,7 +103,7 @@ Wizard.
 On the Assembly Options page, add `Bolt.Addons.Klak.Base.Runtime` to the
 assembly list.
 
-![assembly options](https://i.imgur.com/R87yar0.png)
+![assembly options](https://i.imgur.com/cVwqK2m.png)
 
 How to install the add-on to an existing project
 ------------------------------------------------
@@ -152,7 +152,7 @@ After changes, the manifest file should look like below:
 
 Navigate to "Tools" > "Bolt" > "Unit Options Wizard".
 
-![assembly options](https://i.imgur.com/R87yar0.png)
+![assembly options](https://i.imgur.com/cVwqK2m.png)
 
 Add `Bolt.Addons.Klak.Base.Runtime` to the assembly list. Then press "Next" and
 "Generate."
