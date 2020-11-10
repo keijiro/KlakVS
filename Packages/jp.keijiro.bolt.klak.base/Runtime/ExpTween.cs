@@ -1,9 +1,10 @@
 using Ludiq;
 using UnityEngine;
 
-namespace Bolt.Addons.Klak.Math {
+namespace Bolt.Addons.Klak.Base {
 
 [UnitCategory("Klak/Tween"), UnitTitle("ExpTween (float)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.ExpTweenFloat")]
 public sealed class ExpTweenFloat : Unit
 {
     #region Unit I/O
@@ -36,6 +37,7 @@ public sealed class ExpTweenFloat : Unit
 }
 
 [UnitCategory("Klak/Tween"), UnitTitle("ExpTween (Vector 3)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.ExpTweenVector3")]
 public sealed class ExpTweenVector3 : Unit
 {
     #region Unit I/O
@@ -68,6 +70,7 @@ public sealed class ExpTweenVector3 : Unit
 }
 
 [UnitCategory("Klak/Tween"), UnitTitle("ExpTween (Quaternion)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.ExpTweenQuaternion")]
 public sealed class ExpTweenQuaternion : Unit
 {
     #region Unit I/O
@@ -99,4 +102,4 @@ public sealed class ExpTweenQuaternion : Unit
     #endregion
 }
 
-} // namespace Bolt.Addons.Klak.Math
+} // namespace Bolt.Addons.Klak.Base

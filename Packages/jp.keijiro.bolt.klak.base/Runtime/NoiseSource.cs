@@ -2,7 +2,7 @@ using Ludiq;
 using UnityEngine;
 using Unity.Mathematics;
 
-namespace Bolt.Addons.Klak.Math {
+namespace Bolt.Addons.Klak.Base {
 
 static class NoiseUtil
 {
@@ -22,6 +22,7 @@ static class NoiseUtil
 }
 
 [UnitCategory("Klak/Noise"), UnitTitle("Noise Source (float)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.NoiseSourceFloat")]
 public sealed class NoiseSourceFloat : Unit, IGraphElementWithData
 {
     #region Data class
@@ -95,6 +96,7 @@ public sealed class NoiseSourceFloat : Unit, IGraphElementWithData
 }
 
 [UnitCategory("Klak/Noise"), UnitTitle("Noise Source (Vector 3)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.NoiseSourceVector3")]
 public sealed class NoiseSourceVector3 : Unit, IGraphElementWithData
 {
     #region Data class
@@ -172,6 +174,7 @@ public sealed class NoiseSourceVector3 : Unit, IGraphElementWithData
 }
 
 [UnitCategory("Klak/Noise"), UnitTitle("Noise Source (Quaternion)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.NoiseSourceQuaternion")]
 public sealed class NoiseSourceQuaternion : Unit, IGraphElementWithData
 {
     #region Data class
@@ -248,4 +251,4 @@ public sealed class NoiseSourceQuaternion : Unit, IGraphElementWithData
     #endregion
 }
 
-} // namespace Bolt.Addons.Klak.Math
+} // namespace Bolt.Addons.Klak.Base

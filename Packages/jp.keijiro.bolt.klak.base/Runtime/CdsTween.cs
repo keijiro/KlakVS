@@ -1,9 +1,10 @@
 using Ludiq;
 using UnityEngine;
 
-namespace Bolt.Addons.Klak.Math {
+namespace Bolt.Addons.Klak.Base {
 
 [UnitCategory("Klak/Tween"), UnitTitle("CdsTween (float)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.CdsTweenFloat")]
 public sealed class CdsTweenFloat : Unit, IGraphElementWithData
 {
     #region Data class
@@ -74,6 +75,7 @@ public sealed class CdsTweenFloat : Unit, IGraphElementWithData
 }
 
 [UnitCategory("Klak/Tween"), UnitTitle("CdsTween (Vector 3)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.CdsTweenVector3")]
 public sealed class CdsTweenVector3 : Unit, IGraphElementWithData
 {
     #region Data class
@@ -144,6 +146,7 @@ public sealed class CdsTweenVector3 : Unit, IGraphElementWithData
 }
 
 [UnitCategory("Klak/Tween"), UnitTitle("CdsTween (Quaternion)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.CdsTweenQuaternion")]
 public sealed class CdsTweenQuaternion : Unit, IGraphElementWithData
 {
     #region Data class
@@ -230,4 +233,4 @@ static class Vector4QuaternionExtensions
     }
 }
 
-} // namespace Bolt.Addons.Klak.Math
+} // namespace Bolt.Addons.Klak.Base

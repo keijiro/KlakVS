@@ -16,8 +16,8 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "jp.keijiro.bolt.klak.math": {
-      "version": "file:jp.keijiro.bolt.klak.math",
+    "jp.keijiro.bolt.klak.base": {
+      "version": "file:jp.keijiro.bolt.klak.base",
       "depth": 0,
       "source": "embedded",
       "dependencies": {

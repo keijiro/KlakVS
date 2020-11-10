@@ -1,7 +1,7 @@
 using Ludiq;
 using UnityEngine;
 
-namespace Bolt.Addons.Klak.Math {
+namespace Bolt.Addons.Klak.Base {
 
 static class XXHash
 {
@@ -48,6 +48,7 @@ static class XXHash
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (int)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.XXHashInt")]
 public sealed class XXHashInt : Unit
 {
     #region Unit I/O
@@ -81,6 +82,7 @@ public sealed class XXHashInt : Unit
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (float)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.XXHashFloat")]
 public sealed class XXHashFloat : Unit
 {
     #region Unit I/O
@@ -114,6 +116,7 @@ public sealed class XXHashFloat : Unit
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (Vector 3)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.XXHashVector3")]
 public sealed class XXHashVector3 : Unit
 {
     #region Unit I/O
@@ -155,6 +158,7 @@ public sealed class XXHashVector3 : Unit
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (Direction)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.XXHashDirection")]
 public sealed class XXHashDirection : Unit
 {
     #region Unit I/O
@@ -184,6 +188,7 @@ public sealed class XXHashDirection : Unit
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (Rotation)")]
+[RenamedFrom("Bolt.Addons.Klak.Math.XXHashRotation")]
 public sealed class XXHashRotation : Unit
 {
     #region Unit I/O
@@ -214,4 +219,4 @@ public sealed class XXHashRotation : Unit
     #endregion
 }
 
-} // namespace Bolt.Addons.Klak.Math
+} // namespace Bolt.Addons.Klak.Base
