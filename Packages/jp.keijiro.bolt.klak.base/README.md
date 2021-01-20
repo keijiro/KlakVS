@@ -9,6 +9,7 @@ At the moment, it provides the following units:
 - **XXHash** (deterministic random number generator)
 - **ExpTween**/**CdsTween** (generic interpolator)
 - **Noise Source** (fractional Brownian motion)
+- **On Keyboard Input** (keyboard input with the new Input System)
 
 XXHash
 ------
@@ -80,6 +81,17 @@ undulation/vibration.
 There are variants for different output types: **NoiseSourceFloat**,
 **NoiseSourceVector3**, **NoiseSourceQuaternion**.
 
+OnKeyboardInput
+---------------
+
+![OnKeyboardInput](https://i.imgur.com/om5JWHi.png)
+
+The **OnKeyboardInput** unit is a simple replacement of the standard
+OnKeyboardInput unit but with [the new Input System].
+
+[the new Input System]:
+  https://docs.unity3d.com/Packages/com.unity.inputsystem@latest
+
 How to try the sample project
 -----------------------------
 
@@ -129,7 +141,7 @@ To the `scopedRegistries` section:
 To the `dependencies` section:
 
 ```
-"jp.keijiro.bolt.klak.base": "1.0.0"
+"jp.keijiro.bolt.klak.base": "1.0.1"
 ```
 
 After changes, the manifest file should look like below:
@@ -144,7 +156,7 @@ After changes, the manifest file should look like below:
     }
   ],
   "dependencies": {
-    "jp.keijiro.bolt.klak.base": "1.0.0",
+    "jp.keijiro.bolt.klak.base": "1.0.1",
     ...
 ```
 

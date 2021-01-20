@@ -141,7 +141,7 @@ To the `scopedRegistries` section:
 To the `dependencies` section:
 
 ```
-"jp.keijiro.bolt.klak.base": "1.0.0"
+"jp.keijiro.bolt.klak.base": "1.0.1"
 ```
 
 After changes, the manifest file should look like below:
@@ -156,7 +156,7 @@ After changes, the manifest file should look like below:
     }
   ],
   "dependencies": {
-    "jp.keijiro.bolt.klak.base": "1.0.0",
+    "jp.keijiro.bolt.klak.base": "1.0.1",
     ...
 ```
 
