@@ -1,10 +1,8 @@
-BoltKlak
-========
+KlakVS
+======
 
-**BoltKlak** is an extension for Unity's Bolt visual scripting system that
-provides miscellaneous math functions useful for creating procedural behaviors.
-
-At the moment, it provides the following units:
+**KlakVS** is an extension for visual scripting in Unity. It provides
+miscellaneous math functions useful for creating procedural behaviors.
 
 - **XXHash** (deterministic random number generator)
 - **ExpTween**/**CdsTween** (generic interpolator)
@@ -92,35 +90,8 @@ OnKeyboardInput unit but with [the new Input System].
 [the new Input System]:
   https://docs.unity3d.com/Packages/com.unity.inputsystem@latest
 
-How to try the sample project
------------------------------
-
-This repository doesn't contain the Bolt assets due to the license restriction.
-You have to import [Bolt via Asset Store] manually.
-
-[Bolt via Asset Store]:
-  https://assetstore.unity.com/packages/tools/visual-scripting/bolt-163802
-
-You can't use the "Install Bolt" tool due to compilation errors caused by
-missing file references. You have to manually double-click the
-`Bolt_1_4_X_NET4.unitypackage` file in the "Install Bolt" directory instead.
-
-![unitypackage](https://i.imgur.com/cNxH458.png)
-
-After importing the unitypackage file, it automatically opens the Bolt Setup
-Wizard.
-
-![wizard](https://i.imgur.com/wxlvRh7.png)
-
-On the Assembly Options page, add `Bolt.Addons.Klak.Base.Runtime` to the
-assembly list.
-
-![assembly options](https://i.imgur.com/cVwqK2m.png)
-
-How to install the add-on to an existing project
-------------------------------------------------
-
-### Installing the package via Package Manager
+How to install the package
+--------------------------
 
 This package uses the [scoped registry] feature to resolve package
 dependencies. Please add the following sections to the manifest file
@@ -141,7 +112,7 @@ To the `scopedRegistries` section:
 To the `dependencies` section:
 
 ```
-"jp.keijiro.bolt.klak.base": "1.0.1"
+"jp.keijiro.klak.visualscripting": "1.0.0"
 ```
 
 After changes, the manifest file should look like below:
@@ -156,15 +127,6 @@ After changes, the manifest file should look like below:
     }
   ],
   "dependencies": {
-    "jp.keijiro.bolt.klak.base": "1.0.1",
+    "jp.keijiro.klak.visualscripting": "1.0.0",
     ...
 ```
-
-### Adding the add-on assembly
-
-Navigate to "Tools" > "Bolt" > "Unit Options Wizard".
-
-![assembly options](https://i.imgur.com/cVwqK2m.png)
-
-Add `Bolt.Addons.Klak.Base.Runtime` to the assembly list. Then press "Next" and
-"Generate."
