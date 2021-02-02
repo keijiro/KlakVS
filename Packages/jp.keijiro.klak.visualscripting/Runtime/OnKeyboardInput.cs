@@ -1,9 +1,10 @@
 using Unity.VisualScripting;
 using InputSystem = UnityEngine.InputSystem;
 
-namespace Bolt.Addons.Klak.Base {
+namespace Klak.VisualScripting {
 
 [UnitCategory("Klak/Input"), UnitTitle("On Keyboard Input (NIS)")]
+[RenamedFrom("Bolt.Addons.Klak.Base.OnKeyboardInput")]
 public sealed class OnKeyboardInput : MachineEventUnit<EmptyEventArgs>
 {
     protected override string hookName => EventHooks.Update;
@@ -34,4 +35,4 @@ public sealed class OnKeyboardInput : MachineEventUnit<EmptyEventArgs>
     }
 }
 
-} // namespace Bolt.Addons.Klak.Base
+} // namespace Klak.VisualScripting

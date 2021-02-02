@@ -38,8 +38,8 @@
       },
       "url": "https://packages.unity.com"
     },
-    "jp.keijiro.bolt.klak.base": {
-      "version": "file:jp.keijiro.bolt.klak.base",
+    "jp.keijiro.klak.visualscripting": {
+      "version": "file:jp.keijiro.klak.visualscripting",
       "depth": 0,
       "source": "embedded",
       "dependencies": {

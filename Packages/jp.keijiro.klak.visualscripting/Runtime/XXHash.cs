@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Bolt.Addons.Klak.Base {
+namespace Klak.VisualScripting {
 
 static class XXHash
 {
@@ -60,7 +60,7 @@ static class XXHash
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (int)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.XXHashInt")]
+[RenamedFrom("Bolt.Addons.Klak.Base.XXHashInt")]
 public sealed class XXHashInt : Unit
 {
     #region Unit I/O
@@ -94,7 +94,7 @@ public sealed class XXHashInt : Unit
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (float)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.XXHashFloat")]
+[RenamedFrom("Bolt.Addons.Klak.Base.XXHashFloat")]
 public sealed class XXHashFloat : Unit
 {
     #region Unit I/O
@@ -128,7 +128,7 @@ public sealed class XXHashFloat : Unit
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (Vector 3)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.XXHashVector3")]
+[RenamedFrom("Bolt.Addons.Klak.Base.XXHashVector3")]
 public sealed class XXHashVector3 : Unit
 {
     #region Unit I/O
@@ -170,7 +170,7 @@ public sealed class XXHashVector3 : Unit
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (Direction)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.XXHashDirection")]
+[RenamedFrom("Bolt.Addons.Klak.Base.XXHashDirection")]
 public sealed class XXHashDirection : Unit
 {
     #region Unit I/O
@@ -200,7 +200,7 @@ public sealed class XXHashDirection : Unit
 }
 
 [UnitCategory("Klak/Math"), UnitTitle("XXHash (Rotation)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.XXHashRotation")]
+[RenamedFrom("Bolt.Addons.Klak.Base.XXHashRotation")]
 public sealed class XXHashRotation : Unit
 {
     #region Unit I/O
@@ -229,4 +229,4 @@ public sealed class XXHashRotation : Unit
     #endregion
 }
 
-} // namespace Bolt.Addons.Klak.Base
+} // namespace Klak.VisualScripting

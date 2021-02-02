@@ -1,10 +1,10 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Bolt.Addons.Klak.Base {
+namespace Klak.VisualScripting {
 
 [UnitCategory("Klak/Tween"), UnitTitle("CdsTween (float)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.CdsTweenFloat")]
+[RenamedFrom("Bolt.Addons.Klak.Base.CdsTweenFloat")]
 public sealed class CdsTweenFloat : Unit, IGraphElementWithData
 {
     #region Data class
@@ -75,7 +75,7 @@ public sealed class CdsTweenFloat : Unit, IGraphElementWithData
 }
 
 [UnitCategory("Klak/Tween"), UnitTitle("CdsTween (Vector 3)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.CdsTweenVector3")]
+[RenamedFrom("Bolt.Addons.Klak.Base.CdsTweenVector3")]
 public sealed class CdsTweenVector3 : Unit, IGraphElementWithData
 {
     #region Data class
@@ -146,7 +146,7 @@ public sealed class CdsTweenVector3 : Unit, IGraphElementWithData
 }
 
 [UnitCategory("Klak/Tween"), UnitTitle("CdsTween (Quaternion)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.CdsTweenQuaternion")]
+[RenamedFrom("Bolt.Addons.Klak.Base.CdsTweenQuaternion")]
 public sealed class CdsTweenQuaternion : Unit, IGraphElementWithData
 {
     #region Data class
@@ -233,4 +233,4 @@ static class Vector4QuaternionExtensions
     }
 }
 
-} // namespace Bolt.Addons.Klak.Base
+} // namespace Klak.VisualScripting

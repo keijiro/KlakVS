@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Unity.Mathematics;
 
-namespace Bolt.Addons.Klak.Base {
+namespace Klak.VisualScripting {
 
 static class NoiseUtil
 {
@@ -22,7 +22,7 @@ static class NoiseUtil
 }
 
 [UnitCategory("Klak/Noise"), UnitTitle("Noise Source (float)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.NoiseSourceFloat")]
+[RenamedFrom("Bolt.Addons.Klak.Base.NoiseSourceFloat")]
 public sealed class NoiseSourceFloat : Unit, IGraphElementWithData
 {
     #region Data class
@@ -96,7 +96,7 @@ public sealed class NoiseSourceFloat : Unit, IGraphElementWithData
 }
 
 [UnitCategory("Klak/Noise"), UnitTitle("Noise Source (Vector 3)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.NoiseSourceVector3")]
+[RenamedFrom("Bolt.Addons.Klak.Base.NoiseSourceVector3")]
 public sealed class NoiseSourceVector3 : Unit, IGraphElementWithData
 {
     #region Data class
@@ -174,7 +174,7 @@ public sealed class NoiseSourceVector3 : Unit, IGraphElementWithData
 }
 
 [UnitCategory("Klak/Noise"), UnitTitle("Noise Source (Quaternion)")]
-[RenamedFrom("Bolt.Addons.Klak.Math.NoiseSourceQuaternion")]
+[RenamedFrom("Bolt.Addons.Klak.Base.NoiseSourceQuaternion")]
 public sealed class NoiseSourceQuaternion : Unit, IGraphElementWithData
 {
     #region Data class
@@ -251,4 +251,4 @@ public sealed class NoiseSourceQuaternion : Unit, IGraphElementWithData
     #endregion
 }
 
-} // namespace Bolt.Addons.Klak.Base
+} // namespace Klak.VisualScripting
