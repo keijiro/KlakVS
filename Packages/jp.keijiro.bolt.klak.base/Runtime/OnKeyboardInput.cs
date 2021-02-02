@@ -1,4 +1,4 @@
-using Ludiq;
+using Unity.VisualScripting;
 using InputSystem = UnityEngine.InputSystem;
 
 namespace Bolt.Addons.Klak.Base {

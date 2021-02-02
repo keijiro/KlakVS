@@ -1,8 +1,10 @@
 {
   "author": "Keijiro Takahashi",
   "dependencies": {
-    "com.unity.inputsystem": "1.0.1",
-    "com.unity.mathematics": "1.2.1"
+    "com.unity.inputsystem": "1.0.2",
+    "com.unity.mathematics": "1.2.1",
+    "com.unity.modules.uielements": "1.0.0",
+    "com.unity.visualscripting": "1.5.1-pre.3"
   },
   "description": "Misc math extensions for Bolt",
   "displayName": "BoltKlak",
