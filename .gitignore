@@ -20,5 +20,5 @@ Desktop.ini
 /UserSettings
 
 # Visual Scripting
-/Assets/Bolt.Generated
-/Assets/Bolt.Generated.meta
+/Assets/Unity.VisualScripting.Generated/
+/Assets/Unity.VisualScripting.Generated.meta

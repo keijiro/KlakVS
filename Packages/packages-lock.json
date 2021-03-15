@@ -24,7 +24,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.5.1-pre.3",
+      "version": "1.5.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
