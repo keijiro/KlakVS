@@ -4,7 +4,7 @@
     "com.unity.inputsystem": "1.0.2",
     "com.unity.mathematics": "1.2.1",
     "com.unity.modules.uielements": "1.0.0",
-    "com.unity.visualscripting": "1.5.1-pre.3"
+    "com.unity.visualscripting": "1.5.2"
   },
   "description": "Miscellaneous addons for Unity Visual Scripting",
   "displayName": "KlakVS",
@@ -14,5 +14,5 @@
   "repository": "github:keijiro/KlakVS",
   "unity": "2021.1",
   "unityRelease": "0b1",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }

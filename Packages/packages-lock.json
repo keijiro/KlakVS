@@ -24,7 +24,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.5.1",
+      "version": "1.5.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -46,7 +46,7 @@
         "com.unity.inputsystem": "1.0.2",
         "com.unity.mathematics": "1.2.1",
         "com.unity.modules.uielements": "1.0.0",
-        "com.unity.visualscripting": "1.5.1-pre.3"
+        "com.unity.visualscripting": "1.5.2"
       }
     },
     "jp.keijiro.test-assets": {
